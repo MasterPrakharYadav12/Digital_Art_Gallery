@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Art Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="gallery-title">🎨 Digital Art Gallery</h1>
+            
+            <div class="controls">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search artworks..." class="search-input">
+                    <button id="searchBtn" class="search-btn">🔍</button>
+                </div>
+                
+                <div class="filters">
+                    <select id="categoryFilter" class="filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="Pencil">Pencil</option>
+                        <option value="Ink">Ink</option>
+                        <option value="Acrylic">Acrylic</option>
+                        <option value="Digital">Digital</option>
+                        <option value="Watercolor">Watercolor</option>
+                        <option value="Oil">Oil</option>
+                        <option value="Mixed Media">Mixed Media</option>
+                    </select>
+                    
+                    <select id="sortFilter" class="filter-select">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                    </select>
+                </div>
+                
+                <button id="themeToggle" class="theme-toggle">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div id="loadingSpinner" class="loading">Loading artworks...</div>
+            <div id="galleryGrid" class="gallery-grid"></div>
+            <div id="noResults" class="no-results" style="display: none;">
+                <p>No artworks found matching your criteria.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button id="closeLightbox" class="close-btn">❌</button>
+            <img id="lightboxImage" class="lightbox-image" alt="Artwork">
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxCategory"></p>
+                <div class="lightbox-actions">
+                    <button id="lightboxLikeBtn" class="like-btn">❤️ <span id="lightboxLikeCount">0</span></button>
+                    <button id="lightboxCommentBtn" class="comment-btn">💬 Comments</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comments Modal -->
+    <div id="commentsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Comments</h3>
+                <button id="closeCommentsModal" class="close-btn">❌</button>
+            </div>
+            <div class="modal-body">
+                <div class="comment-form">
+                    <textarea id="commentInput" placeholder="Add a comment..." rows="3"></textarea>
+                    <button id="submitComment" class="submit-btn">Post Comment</button>
+                </div>
+                <div id="commentsList" class="comments-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Digital Art Gallery. Showcasing creativity and artistic expression.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
