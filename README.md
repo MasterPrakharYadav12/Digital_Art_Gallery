@@ -124,8 +124,6 @@ digital-art-gallery/
 - **XSS protection** with HTML escaping
 - **Session-based admin authentication**
 
-## Admin Credentials
-- **Password**: `ruchita123`
 
 ## Browser Support
 - Modern browsers with ES6+ support
